@@ -37,6 +37,46 @@ public class Solution {
         return answer;
     }
 }
+//class Solution {
+//    public int searchInsert(int[] nums, int target) {
+//        Map<Integer, Integer> map = new HashMap<>();
+//        int result = 0;
+//
+//        for (int start = 0, end = 0;
+//        end<nums.length; end++){
+//            if (map.containsKey(target)) {
+//                return map.get(target);
+//            }
+//            if (nums[end] > target) {
+//                start++;
+//            }
+//
+//            map.put(nums[end], end);
+//        }
+//        return nums[start];
+//    }
+//}
+
+//
+//
+//
+//
+//
+//        int answer =0;
+//        Map<Character, Integer> map = new HashMap<>();
+//
+//        for(int start = 0, end = 0; end < s.length(); end++){
+//            if(map.containsKey(s.charAt(end))){
+//                start = Math.max(map.get(s.charAt(end)),start);
+//
+//            }
+//            map.put(s.charAt(end), end + 1);
+//            answer = Math.max(answer, end-start + 1);
+//        }
+//
+//        return answer;
+//    }
+//}
 //public class Solution {
 //    public int lengthOfLongestSubstring(String s) {
 //        int n = s.length(), ans = 0;

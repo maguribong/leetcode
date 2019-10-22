@@ -19,31 +19,55 @@ import java.io.InputStreamReader;
 class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode tempHead = new ListNode(0);
+        ListNode current = tempHead;
         ListNode first = l1;
         ListNode second = l2;
         int carry = 0;
-        ListNode current = tempHead;
+
         while (first != null || second != null) {
             int firstDigit = first.val;
             int secondDigit = second.val;
-            int sum = carry + firstDigit + secondDigit;
+            int sum = firstDigit +  secondDigit + carry;
             carry = sum / 10;
             current.next = new ListNode(sum % 10);
-            current = current.next;
-
-            if (first.next != null) {
+            if (first != null) {
                 first = first.next;
             }
-            if (second.next != null) {
+            if(second != null){
                 second = second.next;
             }
+
         }
-        if( carry > 0){
-            current.next = new ListNode(carry);
-        }
-        return tempHead.next;
+        return current;
     }
 }
+
+//        ListNode tempHead = new ListNode(0);
+//        ListNode first = l1;
+//        ListNode second = l2;
+//        int carry = 0;
+//        ListNode current = tempHead;
+//        while (first != null || second != null) {
+//            int firstDigit = first.val;
+//            int secondDigit = second.val;
+//            int sum = carry + firstDigit + secondDigit;
+//            carry = sum / 10;
+//            current.next = new ListNode(sum % 10);
+//            current = current.next;
+//
+//            if (first.next != null) {
+//                first = first.next;
+//            }
+//            if (second.next != null) {
+//                second = second.next;
+//            }
+//        }
+//        if( carry > 0){
+//            current.next = new ListNode(carry);
+//        }
+//        return tempHead.next;
+//    }
+//}
 
 
 
